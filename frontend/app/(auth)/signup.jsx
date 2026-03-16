@@ -34,10 +34,10 @@ export default function Signup() {
     setLoading(false);
 
     if (!result.success) {
-      Alert.alert("Error", result.message || "Registration failed");
+      Alert.alert("Error", result.error || result.message || "Registration failed");
     } else {
       Alert.alert("Success", "Account created! ");
-    router.replace('/(auth)');
+      router.replace('/(auth)');
     }
   }
 
