@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "BookLume",
-    "slug": "Book-Lume",
+    "slug": "booklume",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,11 +14,13 @@
     },
     "android": {
       "package": "com.bookworm.app",
+      "icon": "./assets/images/icon.png",
+      "fonts": [
+        "./assets/fonts/JetBrainsMono-Medium.ttf"
+      ],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/images/icon.png"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
@@ -40,7 +42,11 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-updates",
+      {
+"username":"yakshith0505"
+      }
     ],
     "experiments": {
       "typedRoutes": true,
@@ -49,8 +55,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "7a62e7c1-2ca5-4fa2-9d61-eca3943dbbf9"
+        "projectId": "0ae9654b-4cfb-4657-9823-9004400b0654"
       }
-    }
+    },
+    "owner": "yakshith0505s-organization"
   }
 }

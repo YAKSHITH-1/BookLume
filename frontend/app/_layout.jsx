@@ -1,9 +1,10 @@
 import { Stack, useRouter, useSegments, useRootNavigationState } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import { StatusBar } from 'expo-status-bar';
 import useAuthStore from '../stores/authstore';
 import { useEffect } from 'react';
+import { useFonts } from 'expo-font';
+import { Text } from 'react-native';
 
 export default function RootLayout() {
   const router = useRouter();
@@ -15,7 +16,13 @@ export default function RootLayout() {
   const token = useAuthStore((state) => state.token);
   const isCheckingAuth = useAuthStore((state) => state.isCheckingAuth);
 
-  console.log('RootLayout:', { userPresent: !!user, tokenPresent: !!token, isCheckingAuth, segments, rootKey: rootNavigationState?.key });
+  const [fontsLoaded] = useFonts({
+ 
+    'JetBrainsMono-Medium': require('../assets/fonts/JetBrainsMono-Medium.ttf'),
+  });
+
+ 
+  
 
   useEffect(() => {
     checkAuth();
@@ -38,6 +45,16 @@ export default function RootLayout() {
 
     return () => clearTimeout(timer);
   }, [user, token, segments, rootNavigationState?.key]);
+
+  if (!fontsLoaded) {
+    return null; 
+  }
+
+ 
+  Text.defaultProps = Text.defaultProps || {};
+  Text.defaultProps.style = { ...Text.defaultProps.style, fontFamily: 'JetBrainsMono-Medium' 
+
+  };
 
   return (
     <SafeAreaProvider>

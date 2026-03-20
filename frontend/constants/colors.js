@@ -94,6 +94,8 @@ const COLORS = {
   
   white: "#FFFFFF",
   black: "#000000",
+
+  fontFamily: "JetBrainsMono-Medium",
 };
 
 
@@ -201,6 +203,8 @@ const COLORS = {
   metallic: "#C49A6C",
   white: "#FFFFFF",
   black: "#000000",
+  
+  fontFamily: "JetBrainsMono-Medium"
 };
 
 export default COLORS;
